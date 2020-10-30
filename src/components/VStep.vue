@@ -49,14 +49,14 @@ export default {
     },
     skip: {
       type: Function,
-      default: function () {
-        this.stop()
+      default: function (props) {
+        props.stop()
       }
     },
     finish: {
       type: Function,
-      default: function () {
-        this.stop()
+      default: function (props) {
+        props.stop()
       }
     },
     isFirst: {
@@ -117,7 +117,7 @@ export default {
         if (this.debug) {
           console.error('[Vue Tour] The target element ' + this.step.target + ' of .v-step[id="' + this.hash + '"] does not exist!')
         }
-        this.$emit('targetNotFound', this.step)
+        this.$emit('target-not-found', this.step)
         if (this.stopOnFail) {
           this.stop()
         }
@@ -186,7 +186,7 @@ export default {
   mounted () {
     this.createStep()
   },
-  destroyed () {
+  unmounted () {
     this.removeHighlight()
   }
 }

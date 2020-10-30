@@ -1,18 +1,24 @@
 import VTour from './components/VTour'
 import VStep from './components/VStep'
+import { VueTourSymbol } from '@/useApi'
+
+export * from '@/useApi'
 
 const VueTour = {
-  install (Vue, options) {
-    Vue.component(VTour.name, VTour)
-    Vue.component(VStep.name, VStep)
+  install (app, options) {
+    app.component(VTour.name, VTour)
+    app.component(VStep.name, VStep)
 
     // Object containing Tour objects (see VTour.vue) where the tour name is used as key
-    Vue.prototype.$tours = {}
+    app.config.globalProperties.$tours = {}
+    console.log(app.config.globalProperties.$tours)
+    app.provide(VueTourSymbol, app.config.globalProperties.$tours)
+    console.log('starting')
   }
 }
 
 export default VueTour
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueTour)
+  window.app.use(VueTour)
 }
