@@ -194,10 +194,10 @@ export default {
 
 <style lang="scss" scoped>
   .v-step {
-    background: #50596c; /* #ffc107, #35495e */
+    background: #727dd9; /* #ffc107, #35495e */
     color: white;
-    max-width: 320px;
-    border-radius: 3px;
+    max-width: 400px;
+    border-radius: 0.5em;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
     padding: 1rem;
     text-align: center;
@@ -213,10 +213,10 @@ export default {
   }
 
   .v-step .v-step__arrow {
-    border-color: #50596c; /* #ffc107, #35495e */
+    border-color: #5a67d8; /* #ffc107, #35495e */
 
     &--dark {
-      border-color: #454d5d;
+      border-color: #5a67d8;
     }
   }
 
@@ -285,9 +285,14 @@ export default {
   .v-step__header {
     margin: -1rem -1rem 0.5rem;
     padding: 0.5rem;
-    background-color: #454d5d;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    background-color: #5a67d8;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+  }
+
+  .v-step__header > div{
+    font-size: 1.5em;
+    font-weight: bold;
   }
 
   .v-step__content {
@@ -297,16 +302,16 @@ export default {
   .v-step__button {
     background: transparent;
     border: .05rem solid white;
-    border-radius: .1rem;
+    border-radius: .5rem;
     color: white;
     cursor: pointer;
     display: inline-block;
-    font-size: .8rem;
-    height: 1.8rem;
+    font-size: .9rem;
+    font-weight: bold;
     line-height: 1rem;
     outline: none;
     margin: 0 0.2rem;
-    padding: .35rem .4rem;
+    padding: 0.5em 0.75em;
     text-align: center;
     text-decoration: none;
     transition: all .2s ease;
@@ -315,7 +320,7 @@ export default {
 
     &:hover {
       background-color: rgba(white, 0.95);
-      color: #50596c;
+      color: #5a67d8;
     }
   }
 </style>

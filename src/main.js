@@ -1,8 +1,8 @@
 import VTour from './components/VTour'
 import VStep from './components/VStep'
-import { VueTourSymbol } from '@/useApi'
+import { VueTourSymbol } from 'vue-tour/useApi'
 
-export * from '@/useApi'
+export * from 'vue-tour/useApi'
 
 const VueTour = {
   install (app, options) {
@@ -13,7 +13,6 @@ const VueTour = {
     app.config.globalProperties.$tours = {}
     console.log(app.config.globalProperties.$tours)
     app.provide(VueTourSymbol, app.config.globalProperties.$tours)
-    console.log('starting')
   }
 }
 
